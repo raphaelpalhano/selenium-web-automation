@@ -3,5 +3,7 @@ environments:
     url: http://automationpractice.com
     login_user: carlos.silva@teste.com
     login_password: teste@15
-    
-    
+  gestao_agil:
+    url: https://d1mvz0p54xwqqm.cloudfront.net/#/entrar​
+    login_user: asilvaga
+    login_password: MasterY

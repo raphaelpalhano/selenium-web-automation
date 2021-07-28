@@ -10,7 +10,7 @@ import com.web.automation.core.Hooks;
 
 import io.cucumber.junit.CucumberOptions;
 
-@CucumberOptions(features = "src/test/resources/features", tags = { "@CT_AUT_02" })
+@CucumberOptions(features = "src/test/resources/features", tags = { "@test" })
 public class TestRunner extends CucumberConfig {
 
 	@BeforeClass

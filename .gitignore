@@ -21,6 +21,7 @@ local.properties
 .project
 .loadpath
 .recommenders
+.access_data.yaml
 
 # External tool builders
 .externalToolBuilders/

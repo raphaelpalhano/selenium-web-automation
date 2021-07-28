@@ -1,4 +1,4 @@
-# language: pt
+#language: pt
 @Login
 Funcionalidade: Automation Pratice
 
@@ -8,6 +8,22 @@ Funcionalidade: Automation Pratice
     E a página de sign in é acessada
     Quando o login é realizado com "${user}" usuário e senha "${password}"
     Então a página de ‘minha conta’ é exibida com sucesso
+
+	@test
+	  Cenário:  Validar login no sistema com usuário incorreto ​
+	    Dado que o gestão ágil é acessado
+	    Quando o login é realizado com usuário "${usuario}" e senha "${senha}"​
+			Então a seguinte mensagem de erro "Credenciais incorretas!" é exibida na página de login​
+
+	
+
+
+	#@test
+	#Cenário: realizar login no sistema
+   # Dado usuario que acessa o site "https://simcast.com/"
+    #E a página de sign in é acessada
+    #Quando o login é realizado com "${user}" usuário e senha "${password}"
+    #Então a página de ‘minha conta’ é exibida com sucesso
 
   @CT_AUT_002
   Cenário: Validar se não é possível acessar página de cadastro sem o preenchimento do campo email
