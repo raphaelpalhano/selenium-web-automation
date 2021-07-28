@@ -1,14 +1,14 @@
 package com.web.automation.util;
 
 import java.awt.BasicStroke;
-
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -32,7 +32,6 @@ import org.apache.poi.xwpf.usermodel.XWPFTableRow;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -41,13 +40,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTSectPr;
 
+import com.sun.jna.platform.win32.GDI32;
+import com.sun.jna.platform.win32.WinDef;
 import com.web.automation.constants.TestRunnerConstants;
 import com.web.automation.core.DriverFactory;
 import com.web.automation.core.Hooks;
 import com.web.automation.models.CucumberScenario;
 import com.web.automation.pages.BasePage;
-import com.sun.jna.platform.win32.GDI32;
-import com.sun.jna.platform.win32.WinDef;
 
 public class GenerateEvidences {
 	private static XWPFDocument doc;
@@ -77,7 +76,7 @@ public class GenerateEvidences {
 				Collections.sort(listImages);
 				String templateName = "templateCT.docx";
 				File file = new File(System.getProperty("user.dir") + File.separator + "src" + File.separator + "test"
-						+ File.separator + "resources" +File.separator+ templateName);
+						+ File.separator + "resources" + File.separator + templateName);
 				FileInputStream fis = new FileInputStream(file.getAbsolutePath());
 				doc = new XWPFDocument(fis);
 				XWPFParagraph p = doc.createParagraph();
@@ -167,27 +166,6 @@ public class GenerateEvidences {
 		run.setFontSize(11);
 		run.setText(text);
 		run.setBold(bold);
-	}
-
-	/**
-	 * Sort images
-	 * 
-	 * @param imageList list of images to be sorted
-	 * @return list of sorted images
-	 */
-	private static ArrayList<String> sort(ArrayList<String> imageList) {
-		int listSize = imageList.size();
-		ArrayList<String> newList = new ArrayList<>();
-		for (int i = 0; i < listSize + 1; i++) {
-			newList.add("x");
-		}
-		for (String img : imageList) {
-			String[] numImg = img.split("_");
-			int num = Integer.parseInt(numImg[0]);
-			newList.set(num, img);
-		}
-		newList.remove(0);
-		return newList;
 	}
 
 	/**
@@ -323,14 +301,10 @@ public class GenerateEvidences {
 						for (By element : elements) {
 							WebElement webElement = wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 							BasePage.scrollToElementPosition(element);
-							Point point = webElement.getLocation();
 							int width = (int) (webElement.getSize().getWidth() * perce);
 							int height = (int) (webElement.getSize().getHeight() * perce);
-							int xInt = point.getX();
-							int yInt = point.getY();
 							Rectangle rectangle = webElement.getRect();
 							int yRect = rectangle.getY();
-							int xRect = rectangle.getX();
 							String ySTR = String.valueOf(yRect);
 							String xSTR = js
 									.executeScript("return arguments[0].getBoundingClientRect().left", webElement)

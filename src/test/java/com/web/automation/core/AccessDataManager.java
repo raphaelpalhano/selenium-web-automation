@@ -17,7 +17,7 @@ public class AccessDataManager {
 	private static AccessData accessData = new AccessData();
 
 	public static boolean isCentralizedData(String data) throws FileNotFoundException, IOException {
-		return StringManager.getListMatcherByRegex(data, "^v[A-Z].*").size() > 0;
+		return StringManager.getListMatcherByRegex(data, "^\\$\\{.*\\}").size() > 0;
 	}
 
 	public static AccessData getData() throws FileNotFoundException, IOException {

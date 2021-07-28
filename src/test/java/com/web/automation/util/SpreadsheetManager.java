@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.CellValue;
@@ -65,14 +64,10 @@ public class SpreadsheetManager {
 	/**
 	 * Write value in spreadsheet
 	 * 
-	 * @param sheetName
-	 *            -> tab name
-	 * @param rowNumber
-	 *            -> row number, start in 0
-	 * @param columnName
-	 *            -> column name in line 0;
-	 * @param value
-	 *            -> value to write
+	 * @param sheetName  -> tab name
+	 * @param rowNumber  -> row number, start in 0
+	 * @param columnName -> column name in line 0;
+	 * @param value      -> value to write
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
@@ -124,14 +119,10 @@ public class SpreadsheetManager {
 	/**
 	 * Write value in spreadsheet
 	 * 
-	 * @param sheetName
-	 *            -> tab name
-	 * @param rowNumber
-	 *            -> row number, start in 0
-	 * @param columnName
-	 *            -> column index, start in 0
-	 * @param value
-	 *            -> value to write
+	 * @param sheetName  -> tab name
+	 * @param rowNumber  -> row number, start in 0
+	 * @param columnName -> column index, start in 0
+	 * @param value      -> value to write
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
@@ -435,7 +426,7 @@ public class SpreadsheetManager {
 		workbook.close();
 		setWorkbook();
 	}
-	
+
 	public void saveToNewSpreadsheet(String path) throws FileNotFoundException, IOException {
 		workbook.write(new FileOutputStream(new File(path)));
 		workbook.close();

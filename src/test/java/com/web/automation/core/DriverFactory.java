@@ -14,7 +14,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.firefox.ProfilesIni;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class DriverFactory {
@@ -80,7 +79,7 @@ public class DriverFactory {
 		options.addPreference("dom.push.enabled", false);
 		// FirefoxProfile profile = new FirefoxProfile (new File
 		// (System.getProperty("user.dir")+File.separator+"firefox-profiles"+File.separator+"default"));
-		ProfilesIni profilesIni = new ProfilesIni();
+//		ProfilesIni profilesIni = new ProfilesIni();
 		FirefoxProfile profile = new FirefoxProfile();
 		// profilesIni.getProfile(profileName);
 		profile.addExtension(new File(System.getProperty("user.dir") + File.separator + "extensions" + File.separator
