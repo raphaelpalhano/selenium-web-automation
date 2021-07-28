@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Web Automation - Selenium
+Bundle-SymbolicName: WEB_AUTOMATION
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: WEB_AUTOMATION
+Bundle-Version: 1.0.0.qualifier
+Export-Package: com.web.automation.constants,
+ com.web.automation.core,
+ com.web.automation.enums,
+ com.web.automation.maps,
+ com.web.automation.models,
+ com.web.automation.pages,
+ com.web.automation.runners,
+ com.web.automation.util
+

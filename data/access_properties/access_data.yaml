@@ -1,0 +1,7 @@
+environments:
+  dev:
+    url: http://automationpractice.com
+    login_user: carlos.silva@teste.com
+    login_password: teste@15
+    
+    
