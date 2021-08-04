@@ -1,5 +1,6 @@
 #language: pt
-@Login
+
+#@Login
 Funcionalidade: Automation Pratice
 
   @CT_AUT_001
@@ -9,22 +10,19 @@ Funcionalidade: Automation Pratice
     Quando o login é realizado com "${user}" usuário e senha "${password}"
     Então a página de ‘minha conta’ é exibida com sucesso
 
-	@test
-	  Cenário:  Validar login no sistema com usuário incorreto ​
-	    Dado que o gestão ágil é acessado
-	    Quando o login é realizado com usuário "${usuario}" e senha "${senha}"​
-			Então a seguinte mensagem de erro "Credenciais incorretas!" é exibida na página de login​
+ 
+  	
 
-	
-
-
-	#@test
-	#Cenário: realizar login no sistema
-   # Dado usuario que acessa o site "https://simcast.com/"
-    #E a página de sign in é acessada
-    #Quando o login é realizado com "${user}" usuário e senha "${password}"
-    #Então a página de ‘minha conta’ é exibida com sucesso
-
+  	
+  #@test
+  #Cenário: realizar login no sistema
+  # Dado usuario que acessa o site "https://simcast.com/"
+  #E a página de sign in é acessada
+  #Quando o login é realizado com "${user}" usuário e senha "${password}"
+  #Então a página de ‘minha conta’ é exibida com sucesso
+  
+  
+  
   @CT_AUT_002
   Cenário: Validar se não é possível acessar página de cadastro sem o preenchimento do campo email
     Dado que o sistema de e-commerce é acessado
@@ -117,3 +115,6 @@ Funcionalidade: Automation Pratice
     Quando selecionar forma de pagamento "Pay by check"
     E a ordem é confirmada
     Então a ordem é finalizada com a mensagem "Your order on My Store is complete."
+    
+    
+    

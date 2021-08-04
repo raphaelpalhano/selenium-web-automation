@@ -74,7 +74,7 @@ public class BasePage {
 	WebDriverWait wait;
 	@SuppressWarnings("unused")
 	private XSSFWorkbook workbook;
-	private static WebDriver driver;
+	protected static WebDriver driver;
 
 	public BasePage() {
 		driver = webDriver;
@@ -93,6 +93,20 @@ public class BasePage {
 		} else {
 			throw new Exception("'Url' está vazia");
 		}
+	}
+	
+	public List<String> listaDeElementosValores(List<WebElement> elementos) {
+		List<String> valores = new ArrayList<String>();
+		for(WebElement elemento: elementos) {
+			valores.add(elemento.getText());
+		}
+		return valores;
+		
+	}
+	
+	public void selectElement(By element, String valor) {
+		Select selectDay = new Select(driver.findElement(element));
+		selectDay.selectByValue(valor);
 	}
 
 	public void click(WebElement element) {
